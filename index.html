@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subject Marks</title>
+  </head>
+  <body>
+    <script>
+      function calculateMarks() {
+        let marks = [];
+
+        for (let i = 1; i <= 5; i++) {
+          let subjectMark = parseInt(
+            prompt("Enter marks for Subject " + i + ":")
+          );
+
+          if (subjectMark >= 0 && subjectMark <= 100) {
+            marks.push(subjectMark);
+          } else {
+            alert("Invalid input: Marks should be between 0 and 100.");
+            return;
+          }
+        }
+
+        let totalMarks = marks.reduce((total, mark) => total + mark, 0);
+
+        let percentage = (totalMarks / 500) * 100;
+
+        alert(
+          "Total Marks: " +
+            totalMarks +
+            "\nPercentage: " +
+            percentage.toFixed(2) +
+            "%"
+        );
+      }
+
+      calculateMarks();
+    </script>
+  </body>
+</html>
